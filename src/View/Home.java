@@ -2094,9 +2094,28 @@ ResultSet rs = new DBSearch().searchAll();
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
 
-    UpdateController.UpdateForm(indexTF.getText(), emailTF.getText(), pWTF.getText(), genderTF.getText(), facultyTF.getText(), intakeTF.getText());
+   
     
- 
+    JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setFileFilter(new FileNameExtensionFilter("Images", "jpg", "jpeg", "png", "gif"));
+                int result = fileChooser.showOpenDialog(Home.this);
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    File selectedFile = fileChooser.getSelectedFile();
+        ImageIcon originalIcon = new ImageIcon(selectedFile.getPath());     
+                     Image originalImage = originalIcon.getImage();
+                    int labelWidth = imgLbl.getWidth();
+                    int labelHeight = imgLbl.getHeight();
+                    Image scaledImage = originalImage.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
+                    ImageIcon scaledIcon = new ImageIcon(scaledImage);
+                    imgLbl.setIcon(scaledIcon);
+                    
+                     
+                    byte[] imageData = getByteArrayFromImage(selectedFile);
+                  
+                         updateImage(imageData,indexTF.getText());
+                          
+                }
+                 UpdateController.UpdateForm(indexTF.getText(), emailTF.getText(), pWTF.getText(), genderTF.getText(), facultyTF.getText(), intakeTF.getText());
     
         // TODO add your handling code here:
     }//GEN-LAST:event_updateBtnActionPerformed
@@ -2129,6 +2148,10 @@ if(indexSearchTF.getText() != null){
            
              imgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/12152175811673454446-64.png")));
 }
+
+
+
+
     // TODO add your handling code here:
     }//GEN-LAST:event_deleteBtnActionPerformed
 
@@ -2169,6 +2192,8 @@ for(int j=0; j<i; j++){
                     byte[] imageData = getByteArrayFromImage(selectedFile);
                     
                           insertImageDataIntoDatabase(imageData,indexTF.getText());
+                          
+                        
                 }
                 
                 
@@ -2618,15 +2643,9 @@ ResultSet rs = stmt.executeQuery("SELECT lecturer_id FROM lecturer WHERE lec_nam
     CourseInsertController.insertForm(subid, subName, degree, lecID);
     
     }
-    
-    
-    
+
 }
 
-
-
-
-            
  catch(SQLException e){
      
      e.printStackTrace();
@@ -2638,8 +2657,6 @@ ResultSet rs = stmt.executeQuery("SELECT lecturer_id FROM lecturer WHERE lec_nam
             subNameTF.setText("");
             
         }
-
-
 
 
         // TODO add your handling code here:
@@ -2858,13 +2875,10 @@ ResultSet rs = stmt.executeQuery("SELECT lecturer_id FROM lecturer WHERE lec_nam
 
            Connection connection =DriverManager.getConnection("jdbc:mysql://localhost:3307/studentlms","root","");
           
-            //String sql = "UPDATE image i JOIN st_detail s ON i.std_id = s.std_id SET i.img = ? where i.std_id=?";
-           
-           //String sql = "UPDATE image i JOIN st_detail s ON(i.std_id = s.std_id)  SET i.img = ? , i.std_id= ? ";
+          
            String sql = "INSERT INTO image VALUES(null,'"+indexNum+"',?)";
             
-             //String sql = "INSERT INTO image img = ?,std_id='"+indexNum+"' ";
-             
+           
 PreparedStatement statement = connection.prepareStatement(sql);
 
     
@@ -2892,7 +2906,40 @@ PreparedStatement statement = connection.prepareStatement(sql);
     }
     
 
-   
+ 
+
+    private static final String DB_URL = "jdbc:mysql://localhost:3307/studentlms";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "";
+
+    public void updateImage(byte[] imageData, String indexNum) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+
+            String sql = "UPDATE image SET img = ? WHERE std_id = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setBytes(1, imageData);
+            statement.setString(2, indexNum);
+
+            int rowsUpdated = statement.executeUpdate();
+
+            if (rowsUpdated > 0) {
+                System.out.println("Image updated successfully.");
+            } else {
+                System.out.println("No image found for index number: " + indexNum);
+            }
+
+            statement.close();
+            connection.close();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("Failed to update image.");
+        }
+    }
+    
+    
+    
     private byte[] getImageDataFromDatabase() {
         try {
             //  connection to database

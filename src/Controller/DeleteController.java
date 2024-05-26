@@ -27,32 +27,34 @@ public class DeleteController {
       //   JOptionPane.showMessageDialog(null, "Record Deleted","Successfull",JOptionPane.INFORMATION_MESSAGE);
       try {
           
-          String inNum= null;
+    String indexNum = null;
           
-      
-      ResultSet rs = new DBSearch().searchLogin(index);
-          
-          while(rs.next()){
+        
+       
+             
+       
+              ResultSet rs = new DBSearch().searchStudent(index);
               
-              inNum = rs.getString("std_id");
-              
+           while(rs.next()){
+           indexNum = rs.getString("std_id");
+           
+           if(indexNum != null){
+           
+                new DBDelete().deleteIndex(index);
+           JOptionPane.showMessageDialog(null, "Record Deleted","Successfull",JOptionPane.INFORMATION_MESSAGE);
+           }
+           else{
+           
+            JOptionPane.showMessageDialog(null, "Invalid Index Number ", "Error", JOptionPane.ERROR_MESSAGE);
+           }
+           
+    
+           
+           
           }
-          
-          if(inNum != null){
-              
-              if(inNum.equals(index)){
-              
-              new DBDelete().deleteIndex(index);
-              
-              }
-             JOptionPane.showMessageDialog(null, "Record Deleted","Successfull",JOptionPane.INFORMATION_MESSAGE);
-                  
-               
-          }
-          else{
-              JOptionPane.showMessageDialog(null, "Invalid Index Number ", "Error", JOptionPane.ERROR_MESSAGE);
-          }
-          
+        
+             
+         
           
             DBConnection.closeCon();
           
