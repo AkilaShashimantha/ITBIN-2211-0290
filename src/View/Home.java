@@ -2296,6 +2296,16 @@ ResultSet rs = stmt.executeQuery("SELECT c.sub_id, c.sub_name, c.degree, l.lec_n
  
  }
   */
+  
+    
+         subIDTF.setText("");
+         subNameTF.setText("");
+    
+            lecIDTF.setText("");
+            lecNameTF.setText("");
+            nicTF.setText("");
+            radioMale.setSelected(false);
+            radioFemale.setSelected(false);
         
 // TODO add your handling code here:
     }//GEN-LAST:event_homeBtnMousePressed
@@ -2321,6 +2331,15 @@ ResultSet rs = stmt.executeQuery("SELECT c.sub_id, c.sub_name, c.degree, l.lec_n
         
         
         
+         subIDTF.setText("");
+         subNameTF.setText("");
+    
+            lecIDTF.setText("");
+            lecNameTF.setText("");
+            nicTF.setText("");
+            radioMale.setSelected(false);
+            radioFemale.setSelected(false);
+        
 // TODO add your handling code here:
     }//GEN-LAST:event_profileBtnMousePressed
 
@@ -2343,6 +2362,16 @@ for(int j=0; j<i; j++){
     
 }
 
+
+         subIDTF.setText("");
+         subNameTF.setText("");
+    
+            lecIDTF.setText("");
+            lecNameTF.setText("");
+            nicTF.setText("");
+            radioMale.setSelected(false);
+            radioFemale.setSelected(false);
+        
 // TODO add your handling code here:
     }//GEN-LAST:event_stDetailBtnMousePressed
 
@@ -2354,6 +2383,17 @@ for(int j=0; j<i; j++){
 
          jTabbedPane1.setSelectedIndex(3);
          
+         
+         
+         subIDTF.setText("");
+         subNameTF.setText("");
+    
+            lecIDTF.setText("");
+            lecNameTF.setText("");
+            nicTF.setText("");
+            radioMale.setSelected(false);
+            radioFemale.setSelected(false);
+        
 // TODO add your handling code here:
     }//GEN-LAST:event_stRegisterBtnMousePressed
 
