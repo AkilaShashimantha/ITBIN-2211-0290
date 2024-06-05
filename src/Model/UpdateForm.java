@@ -21,7 +21,7 @@ public class UpdateForm {
      
     
     
-    public void updateForm(String indexNum,String email,String password,String gender,String faculty, String intake){
+    public void updateForm(String indexNum,String name,String email,String password,String gender,String faculty, String intake){
         
           try {
            Class.forName("com.mysql.cj.jdbc.Driver");
@@ -37,7 +37,7 @@ public class UpdateForm {
            String intk = intake;
        
           
-          stmt1.executeUpdate("UPDATE `st_detail` SET `email`='"+emailaddress+"', `password`='"+pW+"', `gender`='"+gd+"', `faculty`='"+fac+"', `intake`='"+intk+"' WHERE std_id='"+indexNumber+"' ");
+          stmt1.executeUpdate("UPDATE `st_detail` SET `st_name`='"+name+"',`email`='"+emailaddress+"', `password`='"+pW+"', `gender`='"+gd+"', `faculty`='"+fac+"', `intake`='"+intk+"' WHERE std_id='"+indexNumber+"' ");
           
           //stmt1.executeUpdate("UPDATE image i JOIN st_deatil s ON(i.std_id = s.std_id) SET ");
          
@@ -78,6 +78,29 @@ public class UpdateForm {
     
     }
     
+    
+    
+    public void updateLec(String lecID,String lecName,String lecNIC,String gender,String pW){
+    
+     try {
+           Class.forName("com.mysql.cj.jdbc.Driver");
+           
+           stmt1 = DBConnection.getStatementConnection();
+   
+          
+          stmt1.executeUpdate("UPDATE `lecturer` SET `lec_name`='"+lecName+"', `nic`='"+lecNIC+"', `gender`='"+gender+"', `password`='"+pW+"' WHERE lecturer_id='"+lecID+"' ");
+          
+   
+       } catch (ClassNotFoundException ex) {
+           Logger.getLogger(DBFormInsert.class.getName()).log(Level.SEVERE, null, ex);
+       }
+        catch (SQLException ex) {
+            Logger.getLogger(DBFormInsert.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+    
+    
+    }
     
     
 }

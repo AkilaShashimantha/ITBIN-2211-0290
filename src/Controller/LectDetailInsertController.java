@@ -15,12 +15,12 @@ public class LectDetailInsertController {
     
     
     
-    public static void insertForm(String lecID,String lecName,String nic,String gender){
+    public static void insertForm(String lecID,String lecName,String nic,String gender,String pW ){
         
         
         if(lecID != null){
         
-            new DBLecInsert().insertForm(lecID, lecName, nic, gender);
+            new DBLecInsert().insertForm(lecID, lecName, nic, gender, pW);
 
         JOptionPane.showMessageDialog(null, "Record has added successfully", "Successfull",JOptionPane.INFORMATION_MESSAGE);
       

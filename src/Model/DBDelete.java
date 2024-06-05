@@ -45,5 +45,24 @@ public class DBDelete {
     }
     
     
+    public void deleteLec(String lecID){
+    
+        try {
+  
+       
+            stmt = DBConnection.getStatementConnection();
+           
+            
+          stmt.executeUpdate("DELETE FROM `lecturer` WHERE `lecturer_id`='"+lecID+"'");
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DBDelete.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    }
+    
+    
+    
     
 }

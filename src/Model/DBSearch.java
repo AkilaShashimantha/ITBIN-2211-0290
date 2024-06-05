@@ -86,5 +86,65 @@ public class DBSearch {
         return rs;
         }
         
+        public ResultSet searchlecture(String lecID){
+            
+            try {
+                
+                 Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            stmt = DBConnection.getStatementConnection();
+            rs = stmt.executeQuery("SELECT * FROM lecturer WHERE lecturer_id = '"+lecID+"' ");
+              
+                
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DBSearch.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(DBSearch.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+            return rs;
+            
+        }
+        
+         public ResultSet searchAllLecDetail(){
+            
+            try {
+                
+                 Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            stmt = DBConnection.getStatementConnection();
+            rs = stmt.executeQuery("SELECT * FROM lecturer ");
+              
+                
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DBSearch.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(DBSearch.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+            return rs;
+            
+        }
+        
+         
+          public ResultSet searchAllCourseDetails(){
+            
+            try {
+                
+                 Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            stmt = DBConnection.getStatementConnection();
+            rs = stmt.executeQuery("SELECT * FROM course ");
+              
+                
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DBSearch.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(DBSearch.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+            return rs;
+            
+        }
     
 }

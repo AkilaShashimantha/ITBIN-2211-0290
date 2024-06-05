@@ -22,17 +22,11 @@ import java.sql.ResultSet;
 public class DeleteController {
     
   public static void deleteIndex(String index){
-      
-    
-      //   JOptionPane.showMessageDialog(null, "Record Deleted","Successfull",JOptionPane.INFORMATION_MESSAGE);
+     
       try {
           
     String indexNum = null;
-          
-        
-       
-             
-       
+ 
               ResultSet rs = new DBSearch().searchStudent(index);
               
            while(rs.next()){
@@ -47,15 +41,9 @@ public class DeleteController {
            
             JOptionPane.showMessageDialog(null, "Invalid Index Number ", "Error", JOptionPane.ERROR_MESSAGE);
            }
-           
-    
-           
-           
+
           }
         
-             
-         
-          
             DBConnection.closeCon();
           
       } catch (SQLException ex) {
@@ -66,6 +54,40 @@ public class DeleteController {
    
     
   }  
+  
+  public static void lecDelete(String lecID){
+  
+      try {
+          
+          String lec_id = null;
+          
+          ResultSet rs = new DBSearch().searchlecture(lecID);
+          
+          while(rs.next()){
+          
+          lec_id = rs.getString("lecturer_id");
+          
+          if(lec_id != null){
+          
+          new DBDelete().deleteLec(lecID);
+          JOptionPane.showMessageDialog(null, "Record Deleted","Successfull",JOptionPane.INFORMATION_MESSAGE);
+          
+          }
+          else{
+              JOptionPane.showMessageDialog(null, "Invalid Index Number ", "Error", JOptionPane.ERROR_MESSAGE);
+          }
+          
+          }
+           DBConnection.closeCon();
+          
+      } 
+         
+     catch (SQLException ex) {
+          Logger.getLogger(DeleteController.class.getName()).log(Level.SEVERE, null, ex);
+      }
+  
+  }
+  
     
     
 }

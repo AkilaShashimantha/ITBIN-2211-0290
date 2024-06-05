@@ -19,7 +19,7 @@ public class DBLecInsert {
      Statement stmt;
  
    
-   public  void insertForm(String lecID,String lecName,String nic,String gender){
+   public  void insertForm(String lecID,String lecName,String nic,String gender, String pW){
         
        try {
            Class.forName("com.mysql.cj.jdbc.Driver");
@@ -27,7 +27,7 @@ public class DBLecInsert {
            stmt = DBConnection.getStatementConnection();
            
    
-          stmt.executeUpdate("INSERT INTO lecturer VALUES('"+lecID+"','"+lecName+"','"+nic+"','"+gender+"') ");
+          stmt.executeUpdate("INSERT INTO lecturer VALUES('"+lecID+"','"+lecName+"','"+nic+"','"+gender+"','"+pW+"') ");
            
        } catch (ClassNotFoundException ex) {
            Logger.getLogger(DBFormInsert.class.getName()).log(Level.SEVERE, null, ex);
