@@ -146,5 +146,28 @@ public class DBSearch {
             return rs;
             
         }
+          
+          
+          public ResultSet searchsub(String subID){
+            
+            try {
+                
+                 Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            stmt = DBConnection.getStatementConnection();
+            rs = stmt.executeQuery("SELECT * FROM course WHERE sub_id = '"+subID+"' ");
+              
+                
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DBSearch.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(DBSearch.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+            return rs;
+            
+        }
+          
+          
     
 }

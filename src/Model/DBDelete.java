@@ -63,6 +63,22 @@ public class DBDelete {
     }
     
     
+        public void deleteCourse(String subID){
+    
+        try {
+  
+       
+            stmt = DBConnection.getStatementConnection();
+           
+            
+          stmt.executeUpdate("DELETE FROM `course` WHERE `sub_id`='"+subID+"'");
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DBDelete.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    }
     
     
 }

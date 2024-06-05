@@ -89,5 +89,40 @@ public class DeleteController {
   }
   
     
+  public static void subDelete(String subID){
+  
+      try {
+          
+          String sub_id = null;
+          
+          ResultSet rs = new DBSearch().searchsub(subID);
+          
+          while(rs.next()){
+          
+          sub_id = rs.getString("sub_id");
+          
+          if(sub_id != null){
+          
+          new DBDelete().deleteCourse(subID);
+          JOptionPane.showMessageDialog(null, "Record Deleted","Successfull",JOptionPane.INFORMATION_MESSAGE);
+          
+          }
+          else{
+              JOptionPane.showMessageDialog(null, "Invalid subject Number ", "Error", JOptionPane.ERROR_MESSAGE);
+          }
+          
+          }
+           DBConnection.closeCon();
+          
+      } 
+         
+     catch (SQLException ex) {
+          Logger.getLogger(DeleteController.class.getName()).log(Level.SEVERE, null, ex);
+      }
+  
+  }
+  
+  
+  
     
 }

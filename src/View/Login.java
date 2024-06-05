@@ -311,7 +311,8 @@ public class Login extends javax.swing.JFrame {
 
         getAccessibleContext().setAccessibleDescription("");
 
-        pack();
+        setSize(new java.awt.Dimension(800, 508));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseMoved

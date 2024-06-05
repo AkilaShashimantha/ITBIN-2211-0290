@@ -128,7 +128,6 @@ public class Home extends javax.swing.JFrame {
         subLbl = new javax.swing.JLabel();
         lecLbl = new javax.swing.JLabel();
         subIdLbl = new javax.swing.JLabel();
-        errorLbl = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -201,6 +200,7 @@ public class Home extends javax.swing.JFrame {
         lecNameCmB = new javax.swing.JComboBox<>();
         addCourseBtn = new javax.swing.JButton();
         updateCourseBtn = new javax.swing.JButton();
+        subDeleteBtn = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -634,24 +634,30 @@ public class Home extends javax.swing.JFrame {
 
         facLbl.setForeground(new java.awt.Color(255, 255, 255));
         facLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        facLbl.setText("Load");
+        facLbl.setToolTipText("");
         facLbl.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         facLbl.setAutoscrolls(true);
         facLbl.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         subLbl.setForeground(new java.awt.Color(255, 255, 255));
         subLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        subLbl.setText("Click again");
+        subLbl.setToolTipText("");
         subLbl.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         subLbl.setAutoscrolls(true);
         subLbl.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         lecLbl.setForeground(new java.awt.Color(255, 255, 255));
         lecLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lecLbl.setText("Home");
         lecLbl.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lecLbl.setAutoscrolls(true);
         lecLbl.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         subIdLbl.setForeground(new java.awt.Color(255, 255, 255));
         subIdLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        subIdLbl.setText("Can't");
         subIdLbl.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         subIdLbl.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -688,8 +694,6 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        errorLbl.setText("Can't load click again Home");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -699,18 +703,13 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(showBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(errorLbl))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                                .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30))
         );
         jPanel2Layout.setVerticalGroup(
@@ -722,9 +721,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(errorLbl)
-                .addGap(4, 4, 4)
+                .addGap(38, 38, 38)
                 .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -1571,6 +1568,13 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        subDeleteBtn.setText("Delete");
+        subDeleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subDeleteBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
         jPanel26Layout.setHorizontalGroup(
@@ -1578,12 +1582,13 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(updateCourseBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(subDeleteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(updateCourseBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
                     .addComponent(addCourseBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lecNameCmB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(subIDTF)
                     .addComponent(subNameTF)
-                    .addComponent(degreeCmB, 0, 285, Short.MAX_VALUE)
+                    .addComponent(degreeCmB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
                         .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40))))
@@ -1605,7 +1610,9 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(addCourseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(updateCourseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(subDeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
@@ -1622,7 +1629,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(24, 24, 24))
+                .addContainerGap())
         );
 
         jPanel23.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(346, 78, -1, -1));
@@ -2023,7 +2030,7 @@ public class Home extends javax.swing.JFrame {
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, -40, 700, 660));
 
-        pack();
+        setBounds(0, 0, 946, 607);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MousePressed
@@ -2373,8 +2380,7 @@ for(int j=0; j<i; j++){
         
         jTabbedPane1.setSelectedIndex(0);
   stCount();
-  errorLbl.setEnabled(false);
-  errorLbl.setForeground(Color.gray);
+  
   
   lecNameCmB.removeAllItems();
   
@@ -2743,10 +2749,15 @@ catch(SQLException e){
 e.printStackTrace();
 
 }
-  
-  
-   
+ 
+   courseDetail();
 
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CourseBtnMousePressed
+
+    public void courseDetail(){
+    
+    
         try {
             
             ResultSet rs = new DBSearch().searchAllCourseDetails();
@@ -2770,17 +2781,25 @@ e.printStackTrace();
         } catch (SQLException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
-  
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CourseBtnMousePressed
-
+    
+    }
+    
+    
     private void LecDetailLBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LecDetailLBtnMousePressed
 resetColor(homeBtn);
  jTabbedPane1.setSelectedIndex(5);
  
  
- ResultSet rs = new DBSearch().searchAllLecDetail();
+ 
+lecTable();
+ 
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LecDetailLBtnMousePressed
+
+    public void lecTable(){
+    
+    ResultSet rs = new DBSearch().searchAllLecDetail();
 
         try {
              DefaultTableModel tb2Model = (DefaultTableModel)LecDetailTable.getModel();
@@ -2802,12 +2821,11 @@ resetColor(homeBtn);
         } catch (SQLException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
-
- 
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LecDetailLBtnMousePressed
-
+    
+    }
+    
+    
+    
     private void subNameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subNameTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_subNameTFActionPerformed
@@ -2878,6 +2896,8 @@ resetColor(homeBtn);
 
         }
 
+  
+lecTable();
         // TODO add your handling code here:
     }//GEN-LAST:event_addLecBtnActionPerformed
 
@@ -2952,7 +2972,7 @@ ResultSet rs = stmt.executeQuery("SELECT lecturer_id FROM lecturer WHERE lec_nam
             
         }
 
-
+ courseDetail(); 
         // TODO add your handling code here:
     }//GEN-LAST:event_addCourseBtnActionPerformed
 
@@ -3066,10 +3086,6 @@ ResultSet rs = stmt.executeQuery("SELECT lecturer_id FROM lecturer WHERE lec_nam
     
 }
 
-
-
-
-            
  catch(SQLException e){
      
      e.printStackTrace();
@@ -3080,11 +3096,9 @@ ResultSet rs = stmt.executeQuery("SELECT lecturer_id FROM lecturer WHERE lec_nam
             subIDTF.setText("");
             subNameTF.setText("");
     
-    
 }
 
-
-        
+     courseDetail();    
         
     }//GEN-LAST:event_updateCourseBtnActionPerformed
 
@@ -3123,6 +3137,7 @@ lecIDTF.setText("");
 }
 
  
+lecTable();
 
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteLecBtnActionPerformed
@@ -3183,6 +3198,7 @@ lecIDTF.setText("");
 
         }
 
+lecTable();
 
         // TODO add your handling code here:
     }//GEN-LAST:event_updateLecBtnActionPerformed
@@ -3269,6 +3285,27 @@ lecIDTF.setText("");
 
 
     }//GEN-LAST:event_searchLecBtnActionPerformed
+
+    private void subDeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subDeleteBtnActionPerformed
+
+
+String subID = subIDTF.getText();
+
+if(subID != null){
+
+DeleteController.subDelete(subID);
+
+subIDTF.setText("");
+           subIDTF.setText("");
+            subNameTF.setText("");
+           
+           
+}
+
+ courseDetail();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subDeleteBtnActionPerformed
 
           
              public static boolean isTextFieldEmpty(JTextField searchLecTF) {
@@ -3523,7 +3560,6 @@ public void stCount(){
     private javax.swing.JButton deleteLecBtn;
     private javax.swing.JTextField emailTF;
     private javax.swing.JTextField emailTxtF;
-    private javax.swing.JLabel errorLbl;
     private javax.swing.JLabel facLbl;
     private javax.swing.JComboBox<String> facultyCmB;
     private javax.swing.JLabel facultyLbl;
@@ -3659,6 +3695,7 @@ public void stCount(){
     private javax.swing.JPanel stDetailBtn;
     private javax.swing.JTextField stNameTF;
     private javax.swing.JPanel stRegisterBtn;
+    private javax.swing.JButton subDeleteBtn;
     private javax.swing.JTextField subIDTF;
     private javax.swing.JLabel subIdLbl;
     private javax.swing.JLabel subLbl;
