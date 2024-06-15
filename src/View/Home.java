@@ -65,7 +65,8 @@ public class Home extends javax.swing.JFrame {
         initComponents();
 
      
-         
+          homeTable1();
+          stCount();
         this.setLocationRelativeTo(null);
          
     }
@@ -159,6 +160,7 @@ public class Home extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jPanel23 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         emailTxtF = new javax.swing.JTextField();
@@ -190,7 +192,6 @@ public class Home extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
-        jPanel23 = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
         subNameTF = new javax.swing.JTextField();
@@ -201,16 +202,16 @@ public class Home extends javax.swing.JFrame {
         addCourseBtn = new javax.swing.JButton();
         updateCourseBtn = new javax.swing.JButton();
         subDeleteBtn = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        courseTable = new javax.swing.JTable();
         jPanel32 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         searchSubIDTF = new javax.swing.JTextField();
         searchSubBtn = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        courseTable = new javax.swing.JTable();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
         jPanel24 = new javax.swing.JPanel();
         jPanel27 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
@@ -1098,6 +1099,9 @@ public class Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab3", jPanel4);
 
+        jPanel23.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jPanel12.setBackground(new java.awt.Color(204, 210, 227));
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
@@ -1514,33 +1518,38 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab4", jPanel12);
+        jPanel23.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel23.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane1.addTab("tab5", jPanel23);
 
         jPanel25.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel26.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         subNameTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subNameTFActionPerformed(evt);
             }
         });
+        jPanel26.add(subNameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 131, 285, 39));
 
         jLabel26.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel26.setText("Course Details");
+        jPanel26.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 19, 222, 34));
 
         subIDTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subIDTFActionPerformed(evt);
             }
         });
+        jPanel26.add(subIDTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 80, 285, 39));
 
         degreeCmB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IT", "Management", "Science", "Law", "Education" }));
+        jPanel26.add(degreeCmB, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 188, 285, 35));
 
         lecNameCmB.setToolTipText("");
         lecNameCmB.addItemListener(new java.awt.event.ItemListener() {
@@ -1553,6 +1562,7 @@ public class Home extends javax.swing.JFrame {
                 lecNameCmBActionPerformed(evt);
             }
         });
+        jPanel26.add(lecNameCmB, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 241, 285, 36));
 
         addCourseBtn.setText("Add");
         addCourseBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1560,6 +1570,7 @@ public class Home extends javax.swing.JFrame {
                 addCourseBtnActionPerformed(evt);
             }
         });
+        jPanel26.add(addCourseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 309, 285, 32));
 
         updateCourseBtn.setText("Update Details");
         updateCourseBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1567,6 +1578,7 @@ public class Home extends javax.swing.JFrame {
                 updateCourseBtnActionPerformed(evt);
             }
         });
+        jPanel26.add(updateCourseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 359, 285, 32));
 
         subDeleteBtn.setText("Delete");
         subDeleteBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1574,89 +1586,32 @@ public class Home extends javax.swing.JFrame {
                 subDeleteBtnActionPerformed(evt);
             }
         });
+        jPanel26.add(subDeleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 403, 285, 32));
 
-        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
-        jPanel26.setLayout(jPanel26Layout);
-        jPanel26Layout.setHorizontalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(subDeleteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(updateCourseBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                    .addComponent(addCourseBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lecNameCmB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(subIDTF)
-                    .addComponent(subNameTF)
-                    .addComponent(degreeCmB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
-                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40))))
-        );
-        jPanel26Layout.setVerticalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel26Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(subIDTF, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(subNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(degreeCmB, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lecNameCmB, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(addCourseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(updateCourseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(subDeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
+        jPanel25.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 350, 590));
 
-        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
-        jPanel25.setLayout(jPanel25Layout);
-        jPanel25Layout.setHorizontalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel25Layout.setVerticalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel25Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        courseTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Subject_ID", "Subject_Name"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
 
-        jPanel23.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(346, 78, -1, -1));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(courseTable);
 
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("Subject ID");
-        jPanel23.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 152, 32));
-
-        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setText("Subject Name");
-        jPanel23.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 152, 32));
-
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("Lecturer Name");
-        jPanel23.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 152, 32));
-
-        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setText("Name of the Degree");
-        jPanel23.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 152, 32));
+        jPanel25.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 310, 220));
 
         jPanel32.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -1700,32 +1655,33 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel23.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 52, -1, -1));
+        jPanel25.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 52, -1, -1));
 
-        courseTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Subject_ID", "Subject_Name"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("Name of the Degree");
+        jPanel25.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 152, 32));
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane4.setViewportView(courseTable);
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("Lecturer Name");
+        jPanel25.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 152, 32));
 
-        jPanel23.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 310, 220));
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("Subject Name");
+        jPanel25.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 152, 32));
 
-        jTabbedPane1.addTab("tab5", jPanel23);
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("Subject ID");
+        jPanel25.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 152, 32));
+
+        jTabbedPane1.addTab("tab6", jPanel25);
 
         jPanel24.setBackground(new java.awt.Color(102, 102, 102));
         jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2383,7 +2339,27 @@ for(int j=0; j<i; j++){
   
   
   lecNameCmB.removeAllItems();
+ 
+ homeTable1();
   
+    
+         subIDTF.setText("");
+         subNameTF.setText("");
+    
+            lecIDTF.setText("");
+            lecNameTF.setText("");
+            nicTF.setText("");
+             pWLecTF.setText("");
+            radioMale.setSelected(false);
+            radioFemale.setSelected(false);
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_homeBtnMousePressed
+
+    public void homeTable1(){
+    
+    
+     
    StringBuilder facultyText = new StringBuilder();
     StringBuilder subText = new StringBuilder();
     StringBuilder subIdText = new StringBuilder();
@@ -2442,55 +2418,11 @@ ResultSet rs = stmt.executeQuery("SELECT c.sub_id, c.sub_name, c.degree, l.lec_n
       subLbl.setText("<html>" + subText.toString() + "</html>");
      subIdLbl.setText("<html>" + subIdText.toString() + "</html>");
   lecLbl.setText("<html>" + lecText.toString() + "</html>");
-  /*
-   while(rs.next()){
- 
- String sub_name = rs.getString("sub_name");
- String degree = rs.getString("degree");
- 
- String gender = rs.getString("gender");
- 
- if(gender.equals("Male")){
- 
- String lec_name = "Mr."+rs.getString("lec_name");
- 
- 
-   String tbData[] = {degree,sub_name,lec_name};
-    DefaultTableModel tb2Model = (DefaultTableModel)jTable4.getModel();
-                
-                tb2Model.addRow(tbData);
- 
- }
- 
- if(gender.equals("Female")){
- 
- String lec_name = "Mrs."+rs.getString("lec_name");
- 
- 
-   String tbData[] = {degree,sub_name,lec_name};
-                DefaultTableModel tb2Model = (DefaultTableModel)jTable4.getModel();
-                
-                tb2Model.addRow(tbData);
- 
- }
- 
- }
-  */
-  
     
-         subIDTF.setText("");
-         subNameTF.setText("");
     
-            lecIDTF.setText("");
-            lecNameTF.setText("");
-            nicTF.setText("");
-             pWLecTF.setText("");
-            radioMale.setSelected(false);
-            radioFemale.setSelected(false);
-        
-// TODO add your handling code here:
-    }//GEN-LAST:event_homeBtnMousePressed
-
+    }
+    
+    
     
     private void profileBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileBtnMousePressed
         setColor(profileBtn);
@@ -2717,6 +2649,8 @@ for(int j=0; j<i; j++){
 
     private void CourseBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CourseBtnMousePressed
 
+        
+        
 resetColor(homeBtn);
   jTabbedPane1.setSelectedIndex(4);
   
@@ -3031,7 +2965,7 @@ ResultSet rs = stmt.executeQuery("SELECT lecturer_id FROM lecturer WHERE lec_nam
           
          subIDTF.setText(sub_ID);
          subNameTF.setText(subName);
-   ;
+   
          DBConnection.closeCon();
         }
         catch(SQLException ex){
